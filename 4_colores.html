@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 colores</title>
+</head>
+<body>
+    <div style="display: flex; justify-content: space-around;">
+        <div class="container" style="display: flex; flex-direction: column; gap: 10px;">
+            <div id="azul" style="height: 200px; width: 200px; background-color: blue;"></div>
+            <div id="rojo" style="height: 200px; width: 200px; background-color: red;"></div>
+            <div id="verde" style="height: 200px; width: 200px; background-color: green;"></div>
+            <div id="amarillo" style="height: 200px; width: 200px; background-color: yellow;"></div>
+        </div>
+        <div class="container" style="display: flex; flex-direction: column; gap: 10px;">
+            <div id="key" style="height: 200px; width: 200px; background-color: white; border: 1px solid black;"></div>
+        </div>
+    </div>    
+    <div id="contenedor" class="container2"></div>
+    <script>
+        const azul = document.getElementById("azul")
+        const rojo = document.getElementById("rojo")
+        const verde = document.getElementById("verde")
+        const amarillo = document.getElementById("amarillo")
+        const blanco = document.getElementById("key")
+       
+
+
+        const pintar1 = function(color){
+            azul.style.backgroundColor = color
+        }
+        const pintar2 = function(color){
+            rojo.style.backgroundColor = color
+        }
+        const pintar3 = function(color){
+            verde.style.backgroundColor = color
+        }
+        const pintar4 = function(color){
+            amarillo.style.backgroundColor = color
+        }
+        azul.addEventListener ("click", () => {pintar1("black")})
+        rojo.addEventListener ("click", () => {pintar2("black")})
+        verde.addEventListener ("click", () => {pintar3("black")})
+        amarillo.addEventListener ("click", () => {pintar4("black")})
+
+        document.addEventListener("keydown", function(event){
+            if (event.key == "a" || event.key == "A"){
+                blanco.style.backgroundColor = "pink"
+            }
+            else if (event.key =="s" || event.key == "S"){
+                blanco.style.backgroundColor = "orange"
+            }
+            else if (event.key =="d" || event.key == "D"){
+                blanco.style.backgroundColor = "lightblue"
+            }
+            else if (event.key =="q" || event.key =="Q"){
+                const nuevoDiv = document.createElement("div")
+                nuevoDiv.style.width = "200px"
+                nuevoDiv.style.height = "200px"
+                nuevoDiv.style.margin = "10px"
+
+                nuevoDiv.style.backgroundColor ="purple"
+                const contenedor = document.getElementById("contenedor")
+                contenedor.appendChild(nuevoDiv)
+            }
+            else if (event.key =="w" || event.key =="W"){
+                const nuevoDiv = document.createElement("div")
+                nuevoDiv.style.width = "200px"
+                nuevoDiv.style.height = "200px"
+                nuevoDiv.style.margin = "10px"
+
+                nuevoDiv.style.backgroundColor ="grey"
+                const contenedor = document.getElementById("contenedor")
+                contenedor.appendChild(nuevoDiv)
+            }
+            else if (event.key =="e" || event.key =="E"){
+                const nuevoDiv = document.createElement("div")
+                nuevoDiv.style.width = "200px"
+                nuevoDiv.style.height = "200px"
+                nuevoDiv.style.margin = "10px"
+
+                nuevoDiv.style.backgroundColor ="brown"
+                const contenedor = document.getElementById("contenedor")
+                contenedor.appendChild(nuevoDiv)
+            }
+
+        })
+    </script>
+</body>
+</html>
+<!-- Hola Alba como estas? para este desafío seguí los consejos de la profe
+con respecto a aplicar los estilos y las funciones dentro del html , ya que no estaba especificado,
+ como en un ejercicio anterior el incluir archivos en carpeta asset, eso jeje espero este bien mi ttrabajo jejej
+Saludos Alba que tengas buen finde y Gracias ;) -->
